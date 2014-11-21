@@ -1,15 +1,4 @@
 #!/bin/sh
-############################################################################
-#                                                                          #
-# Copyright (c) 2014 - wulsic (wulsic@hotmail.com)                         #
-#                                                                          #
-# Java Switcher script.  This script file is intended for personal         #
-# and/or educational use only.  It may not be duplicated for monetary      #
-# benefit or any other purpose without the permission of the developer.    #
-# In case you want to use it for yourself, change the java alternative     #
-# to your used java name.                                                  #
-#                                                                          #
-############################################################################
 clear
 choice=""
 
@@ -34,6 +23,8 @@ case $choice in
 
 1)
 clear
+echo "Wait for it..."
+echo
 sudo update-java-alternatives -s java-6-oracle
 echo "Press enter to continue..."
 read -p "" 
@@ -41,6 +32,8 @@ clear ;;
 
 2)
 clear
+echo "Wait for it..."
+echo
 sudo update-java-alternatives -s java-7-oracle
 echo "Press enter to continue..."
 read -p "" 
@@ -48,6 +41,8 @@ clear ;;
 
 3)
 clear
+echo "Wait for it..."
+echo
 ls -la /etc/alternatives/java* && ls -la /etc/alternatives/jar
 echo "Press enter to continue..."
 read -p "" 
