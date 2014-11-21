@@ -1,4 +1,15 @@
 #!/bin/sh
+############################################################################
+#                                                                          #
+# Copyright (c) 2014 - wulsic (wulsic@hotmail.com)                         #
+#                                                                          #
+# Java Switcher script.  This script file is intended for personal         #
+# and/or educational use only.  It may not be duplicated for monetary      #
+# benefit or any other purpose without the permission of the developer.    #
+# If you are going to use this script then you have to modify the java     #
+# alternative to your java version to get it working.                      #
+#                                                                          #
+############################################################################
 clear
 choice=""
 
@@ -62,7 +73,7 @@ clear ;;
 echo "Press enter to continue..."
 exit ;;
 
-*) echo "menu item is not available; try again!"
+*) echo "This menu item doesn't exist. Try again!"
 echo "Press enter to continue..."
 read -p "" ;;
 
