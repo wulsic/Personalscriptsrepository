@@ -1,4 +1,16 @@
 #!/bin/sh
+############################################################################
+#                                                                          #
+# Copyright (c) 2014 - wulsic (wulsic@hotmail.com)                         #
+#                                                                          #
+# Java Switcher script.  This script file is intended for personal         #
+# and/or educational use only.  It may not be duplicated for monetary      #
+# benefit or any other purpose without the permission of the developer.    #
+# In case you want to use it for yourself, change the java alternative     #
+# to your used java name.                                                  #
+#                                                                          #
+############################################################################
+clear
 choice=""
 
 while [ "$choice" != "q" ]
@@ -7,13 +19,13 @@ do
   echo " Java version switcher for Android compiling (Cm11/Cm12)    "
   echo "============================================================"
   echo 
-  echo "  Java Switcher Menu     "
+  echo "  Java Switcher Menu Used "
   echo
-  echo "  1 - Switch to java 1.6 "
-  echo "  2 - Switch to java 1.7 "
-  echo "  3 - Check java version "
-  echo "  4 - Android Build info "
-  echo "  0 - Quit java switcher "
+  echo "  1 - Switch to java 1.6  "
+  echo "  2 - Switch to java 1.7  "
+  echo "  3 - Check java version  "
+  echo "  4 - Android Build info  "
+  echo "  0 - Quit java switcher  "
   echo -n "Enter option: "
 
 read choice
@@ -21,21 +33,35 @@ read choice
 case $choice in
 
 1)
+clear
 sudo update-java-alternatives -s java-6-oracle
 echo "Press enter to continue..."
-read -p "" ;;
+read -p "" 
+clear ;;
 
 2)
+clear
 sudo update-java-alternatives -s java-7-oracle
 echo "Press enter to continue..."
-read -p "" ;;
+read -p "" 
+clear ;;
 
-3)ls -la /etc/alternatives/java* && ls -la /etc/alternatives/jar
+3)
+clear
+ls -la /etc/alternatives/java* && ls -la /etc/alternatives/jar
 echo "Press enter to continue..."
-read -p "" ;;
+read -p "" 
+clear ;;
 
-4)echo "Cyanogenmod11 uses java 1.6 for compiling   "
-  echo "Cyanogenmod12 uses java 1.7 for compiling   " ;;
+4)
+clear
+echo
+echo "Cyanogenmod11 uses java 1.6 for compiling "
+echo "Cyanogenmod12 uses java 1.7 for compiling "
+echo 
+echo "Press enter to continue..."
+read -p ""
+clear ;;
 
 0)echo "Quitting"
 echo "Press enter to continue..."
