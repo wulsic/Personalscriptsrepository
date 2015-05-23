@@ -175,7 +175,7 @@ exit ;;
 *)
 clear
   echo "============================================================"
-  echo "     What are you trying to do? There is no hidden menu.    "
+  echo "   What are you trying to do? There is no hidden menu or?.  "
   echo "============================================================"
 echo "Press ENTER to continue..."
 read -p ""
