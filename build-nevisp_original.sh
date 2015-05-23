@@ -67,7 +67,7 @@ echo
 res2=$(date +%s.%N)
 echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
 echo
-echo "Press ENTER to continue..."
+echo "Press ENTER to return to the menu."
 read -p ""
 ;;
 
@@ -84,10 +84,13 @@ clear ;;
 
 3)
 clear
+res1=$(date +%s.%N)
   echo "============================================================"
   echo "                        Syncing Repo                        "
   echo "============================================================"
 repo sync
+res2=$(date +%s.%N)
+echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|bc ) minutes ($(echo "$res2 - $res1"|bc ) seconds) ${txtrst}"
 echo "Press ENTER to continue..."
 read -p ""
 clear ;;
