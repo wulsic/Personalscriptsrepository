@@ -70,7 +70,7 @@ echo "${bldgrn}Total time elapsed: ${txtrst}${grn}$(echo "($res2 - $res1) / 60"|
 echo
 echo "Press ENTER to return to the menu."
 read -p ""
-clear ;;
+;;
 
 2)
 clear
