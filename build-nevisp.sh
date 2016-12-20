@@ -1,11 +1,11 @@
 #!/bin/sh
 ############################################################################
 #                                                                          #
-# Copyright (c) 2014 - wulsic (wulsic@hotmail.com)                         #
+# Copyright (c) 2016 - wulsic (wulsic@hotmail.com)                         #
 #                                                                          #
 # This simple android rom building script file is intended for personal    #
 # and/or educational use only. But who is ever going to use this           #
-# except me? This is an simple script so don't expect too much.            #
+# except me? This is just a simple script so don't expect too much.        #
 #                                                                          #
 ############################################################################
 clear
@@ -22,7 +22,6 @@ do
   echo "  3 - Sync repo      "
   echo "  4 - Make clobber   "
   echo "  5 - Terminal       "
-  echo "  6 - Change Color   "
   echo "  0 - Quit menu      "
   echo
   echo -n "Enter option: "
@@ -39,7 +38,7 @@ clear
   echo "                      Applying Patches                      "
   echo "============================================================"
   echo 
-  ./patches/apply-patches.sh
+  ./build_tools/patch
   echo 
   echo "============================================================"
   echo "Check Terminal for errors, If there were no errors,         "
@@ -54,6 +53,9 @@ clear
     export USE_CCACHE=1
     prebuilts/misc/linux-x86/ccache/ccache -M 50G
     export RELEASE_TYPE=NIGHTLY
+    export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4g"
+./prebuilts/sdk/tools/jack-admin kill-server
+./prebuilts/sdk/tools/jack-admin start-server
   clear
   echo "============================================================"
   echo "                      Lunching Device                       "
@@ -117,54 +119,6 @@ read -p ""
 clear
 return
 clear ;;
-
-# Under this line starts the menu in menu menu's.
-#---------------------------------------------------------------------------------------------------------------------------------
-6)
-clear
-  echo "============================================================"
-  echo "     Enter a Number to Change the Terminals Appearance      "
-  echo "============================================================"
-  echo 
-  echo "  8  - Change Text Boreground Color    "
-  echo "  9  - Change Text Background Color    "
-  echo "  1-  - Reset Custom Colors             "
-  echo "  11 - Go back to menu                 "
-clear ;;
-
-wulsic)
-clear
-  echo "============================================================"
-  echo "   RAINBOW MODE, PRESS ENTER TO START AND GET PIXELATED     "
-  echo "============================================================"
-echo "Press ENTER to continue..."
-read -p ""
-for i in {1..1000000}
-do
-tput setab 1 && sleep 0.2 && echo && tput setab 1 && sleep 0.2 && echo && tput setab 2 && sleep 0.2 && echo && tput setab 2 && sleep 0.2 && echo && tput setab 3 && sleep 0.2 && echo && tput setab 3 && sleep 0.2 && echo && tput setab 4 && sleep 0.2 && echo && tput setab 4 && sleep 0.2 && echo && tput setab 5 && sleep 0.2 && echo && tput setab 5 && sleep 0.2 && echo && tput setab 6 && sleep 0.2 && echo && tput setab 6 && sleep 0.2 && echo && tput setab 7 && sleep 0.2 && echo && tput setab 7 && sleep 0.2 && echo && tput setab 9 && sleep 0.2 && echo && tput setab 9 && sleep 0.2 && echo && tput setab 9 && sleep 0.2 && echo && tput setab 0 && sleep 0.2 && echo
-done
-clear ;;
-
-8)
-clear
-  echo "============================================================"
-  echo "             Which color do you desire my lord?             "
-  echo "============================================================"
-  echo 
-  echo "  1 - Black  "
-  echo "  2 - Red    "
-  echo "  3 - Green  "
-  echo "  4 - Yellow "
-  echo "  5 - Blue   "
-  echo "  6 - Magenta"
-  echo "  7 - Cyan   "
-  echo "  8 - White  "
-  echo
-  echo -n "Enter option: "
-clear ;;
-
-#
-#---------------------------------------------------------------------------------------------------------------------------------
 
 0)
 clear
